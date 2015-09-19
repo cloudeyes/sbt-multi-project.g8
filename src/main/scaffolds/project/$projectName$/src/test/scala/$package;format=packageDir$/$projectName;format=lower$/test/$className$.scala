@@ -1,4 +1,4 @@
-package cloudeyes.study.scala.$projectName; format="lower"$
+package cloudeyes.study.scala.$projectName;format="lower"$.test
 
 import org.scalatest.FunSuite
 import org.scalatest.junit._
