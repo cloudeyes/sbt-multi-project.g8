@@ -2,7 +2,7 @@ import sbt._
 import sbt.Keys._
 import com.typesafe.sbteclipse.core.EclipsePlugin._
 import EclipseBuild._
-import spray.revolver.RevolverPlugin.Revolver._
+//import spray.revolver.RevolverPlugin.Revolver._
 
 object Config {
   object ver {
