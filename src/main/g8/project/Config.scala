@@ -2,8 +2,7 @@ import sbt._
 import sbt.Keys._
 import com.typesafe.sbteclipse.core.EclipsePlugin._
 import EclipseBuild._
-
-//import spray.revolver.RevolverPlugin.Revolver._
+import spray.revolver.RevolverPlugin.Revolver._
 
 object Config {
   object ver {
@@ -25,13 +24,16 @@ object Config {
   val commonLibs       = Seq(junitLib)
   val unidocSettings   = Unidoc.unidocSettings
   val scaladocSettings = Unidoc.scaladocSettings
-  val scmInfo          = Some(ScmInfo(browseUrl = url("http://your.github.repo"), connection = "scm:git:git@your.github.repo:account/project-name.git"))
+  val scmInfo          = Some(ScmInfo(
+    browseUrl = url("http://your.github.repo"), 
+    connection = "scm:git:git@your.github.repo:account/project-name.git"))
   val scaladocDiagramsEnabled = true
   val scaladocAutoAPI = true 
   val genjavadocEnabled = true
 
   val commonSettings = Seq(
       logLevel        := Level.Warn,
+      resolvers       ++= Seq(Resolver.mavenLocal),
       organization    := "$organization$",
       version         := "$version$",
       autoAPIMappings := true,
@@ -72,6 +74,7 @@ object Config {
   )
 
   val webServerSettings = commonScalaSettings ++ Seq(
+      resolvers           ++= Seq("spray repo" at "http://repo.spray.io"),
       unmanagedJars in Compile := 
           ((baseDirectory.value / "lib") ** "*.jar").classpath, 
       libraryDependencies ++= Seq(

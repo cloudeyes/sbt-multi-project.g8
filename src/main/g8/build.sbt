@@ -2,10 +2,7 @@ name               := "$name$"
 scalaVersion       := Config.ver.scala.lang
 crossScalaVersions := Seq(Config.ver.scala.lang)
 
-resolvers += Resolver.mavenLocal
-resolvers += "spray repo" at "http://repo.spray.io"
-
-/* Sub Projects */
+/* TODO: Modify this template of sub-projects */
 lazy val javaProject = project.
     settings(Config.commonJavaSettings)
 
@@ -23,4 +20,3 @@ lazy val root = (project in file(".")).
 
 fork in run  := true
 fork in test := true
-connectInput in run := true
