@@ -1,4 +1,4 @@
-package cloudeyes.study.scala.$projectName;format="lower"$.test
+package cloudeyes.study.scala.$projectName;format="lower"$
 
 import org.scalatest.FunSuite
 import org.scalatest.junit._
@@ -12,4 +12,5 @@ class $className$ extends FunSuite {
   test ("a simple test") {
     assertEquals("should", "fail")
   }
+
 }
